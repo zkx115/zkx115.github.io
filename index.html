@@ -3,78 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog · 邹凯璇</title>
+  <title>邹凯璇 · 个人主页</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/style.css" />
-  <style>
-    .blog-hero-strip {
-      background: var(--bg-alt);
-      border-bottom: 1px solid var(--border);
-      padding: calc(60px + var(--space-12)) var(--space-6) var(--space-8);
-    }
-    .blog-hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: var(--space-8);
-      flex-wrap: wrap;
-    }
-    .blog-breadcrumb {
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-      color: var(--text-muted);
-      margin-bottom: var(--space-3);
-    }
-    .blog-breadcrumb a { color: var(--text-muted); }
-    .blog-breadcrumb a:hover { color: var(--text-primary); }
-    .blog-stats {
-      display: flex;
-      gap: var(--space-6);
-    }
-    .blog-stat {
-      text-align: center;
-    }
-    .blog-stat-num {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1;
-    }
-    .blog-stat-label {
-      font-size: 0.72rem;
-      font-family: var(--font-mono);
-      color: var(--text-muted);
-      margin-top: var(--space-1);
-    }
-    .visitor-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      font-size: 0.72rem;
-      font-family: var(--font-mono);
-      color: var(--text-muted);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: var(--space-2) var(--space-4);
-      border-radius: var(--r-sm);
-    }
-  </style>
+  <!-- 国内 CDN 备用，Google Fonts 加载失败时自动回退 -->
+  <link href="https://fonts.googleapis.cn/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    // 检测字体是否加载成功，失败时加载国内镜像
+    (function() {
+      document.fonts.ready.then(function() {
+        var loaded = document.fonts.check('1em "Playfair Display"');
+        if (!loaded) {
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://fonts.loli.net/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap';
+          document.head.appendChild(link);
+        }
+      });
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
+  <!-- ───────────── NAVIGATION ───────────── -->
   <header class="site-nav">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">KX<span class="logo-dot">.</span></a>
+      <a href="index.html" class="nav-logo">KX<span class="logo-dot">.</span></a>
       <nav class="nav-links">
-        <a href="../projects.html">Projects</a>
-        <a href="../experience.html">Experience</a>
-        <a href="index.html">Blog</a>
-        <a href="../index.html#contact">Contact</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="#contact">Contact</a>
       </nav>
       <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
         <span class="toggle-icon">◑</span>
@@ -82,224 +43,294 @@
     </div>
   </header>
 
-  <!-- Blog hero strip -->
-  <div class="blog-hero-strip">
-    <div class="blog-hero-inner">
-      <div>
-        <div class="blog-breadcrumb">
-          <a href="../index.html">Home</a> &nbsp;›&nbsp; Blog
+  <!-- ───────────── HERO ───────────── -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-blur-orb orb-1"></div>
+      <div class="hero-blur-orb orb-2"></div>
+      <div class="hero-blur-orb orb-3"></div>
+      <div class="hero-grid-overlay"></div>
+    </div>
+    <div class="hero-main">
+      <div class="hero-content">
+        <div class="hero-badge hero-badge-art">
+          <span class="badge-dot"></span>
+          <span class="badge-text">祝我铮铮，祝我昂扬</span>
         </div>
-        <h1 style="font-family:var(--font-display); font-size: clamp(2rem,5vw,3.2rem); font-weight:700; letter-spacing:-0.03em; color:var(--text-primary);">All Posts</h1>
-        <p style="font-size:0.9rem; color:var(--text-secondary); margin-top:var(--space-2);">记录技术、备考、实习与思考的地方</p>
+        <h1 class="hero-title">
+          Kaixuan Zou
+          <br /><span class="hero-cn-name">邹凯璇</span>
+        </h1>
+        <p class="hero-subtitle">
+          终身学习者 · 生活爱好者<br />
+          北京化工大学 2023 级 · 用友测试实习生
+        </p>
+        <div class="hero-cta">
+          <a href="projects.html" class="btn-primary">查看项目 →</a>
+          <a href="blog/index.html" class="btn-ghost">阅读博客</a>
+        </div>
+        <div class="hero-tags">
+          <span class="tag tag-green">React / Next.js</span>
+          <span class="tag tag-pink">Node.js / Express</span>
+          <span class="tag tag-yellow">微信小程序</span>
+          <span class="tag tag-mint">Python / Playwright</span>
+          <span class="tag tag-lavender">AI Agent / LLM</span>
+          <span class="tag tag-green">SQL / Prisma</span>
+          <span class="tag tag-pink">会计 & 财务</span>
+        </div>
       </div>
-      <div class="blog-stats">
-        <div class="blog-stat">
-          <div class="blog-stat-num">10</div>
-          <div class="blog-stat-label">篇文章</div>
+      <aside class="hero-status">
+        <div class="status-header">
+          <span class="status-pulse"></span>
+          <span class="status-label">最新动态</span>
         </div>
-        <div class="blog-stat">
-          <div class="blog-stat-num">5</div>
-          <div class="blog-stat-label">个分类</div>
+        <ul class="status-list">
+          <li class="status-item">
+            <span class="status-bullet" style="--bullet-color:var(--c-green)"></span>
+            <span class="status-text">正在把学到的AI知识加入AI知识库</span>
+          </li>
+          <li class="status-item">
+            <span class="status-bullet" style="--bullet-color:var(--c-pink)"></span>
+            <span class="status-text">尝试做个人网站</span>
+          </li>
+          <li class="status-item">
+            <span class="status-bullet" style="--bullet-color:var(--c-yellow)"></span>
+            <span class="status-text">尝试修改不能复现的项目</span>
+          </li>
+        </ul>
+        <div class="status-divider"></div>
+        <div class="status-avatar" title="可以用自己的图片替换">
+          <img src="assets/avatar.png" alt="avatar" class="avatar-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="avatar-fallback" style="display:none">
+            <div class="avatar-face-v2">
+              <div class="avatar-glasses-v2">
+                <div class="avatar-lens-v2"></div>
+                <div class="avatar-bridge-v2"></div>
+                <div class="avatar-lens-v2"></div>
+              </div>
+              <div class="avatar-blush-v2"></div>
+              <div class="avatar-mouth-v2"></div>
+            </div>
+            <div class="avatar-cap-v2"></div>
+          </div>
         </div>
-        <div class="blog-stat">
-          <div class="blog-stat-num">2026</div>
-          <div class="blog-stat-label">活跃年份</div>
-        </div>
+      </aside>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ───────────── FEATURED PROJECTS ───────────── -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Projects</span>
+        <h2 class="section-title">精选项目</h2>
+        <a href="projects.html" class="section-more">全部项目 →</a>
+      </div>
+      <div class="project-grid">
+
+        <article class="project-card project-featured">
+          <div class="project-card-img" style="background: linear-gradient(135deg, oklch(80% 0.08 160), oklch(90% 0.05 200))">
+            <div class="project-icon">🚆</div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-meta">
+              <span class="tag tag-green">微信小程序</span>
+              <span class="tag tag-yellow">AI Agent</span>
+              <span class="tag tag-mint">Node.js</span>
+            </div>
+            <h3 class="project-title">12306 订票 Agent</h3>
+            <p class="project-desc">自然语言告诉 Agent「我要从北京去上海，周五出发坐高铁」，自动完成意图解析、搜票、选座、抢票全流程。接入 12306 API + LLM 意图识别 + BullMQ 抢票队列。</p>
+            <div class="project-links">
+              <a href="projects.html" class="proj-link">查看详情 →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-img" style="background: linear-gradient(135deg, oklch(85% 0.06 340), oklch(92% 0.04 20))">
+            <div class="project-icon">🤖</div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-meta">
+              <span class="tag tag-green">用友 BIP</span>
+              <span class="tag tag-pink">AI Agent</span>
+              <span class="tag tag-mint">WorkBuddy Skill</span>
+            </div>
+            <h3 class="project-title">BIP 租户开通 Agent</h3>
+            <p class="project-desc">用 WorkBuddy Skill 全流程自动化：用友 BIP 商务系统下单 → 集团提单审批 → 租户激活授权，替代原来手动点击 184 次的繁琐流程。</p>
+            <div class="project-links">
+              <a href="projects.html" class="proj-link">查看详情 →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-img" style="background: linear-gradient(135deg, oklch(88% 0.07 90), oklch(94% 0.05 60))">
+            <div class="project-icon">⚡</div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-meta">
+              <span class="tag tag-yellow">RPA</span>
+              <span class="tag tag-lavender">JavaScript</span>
+            </div>
+            <h3 class="project-title">用友日常工作 RPA</h3>
+            <p class="project-desc">用 JavaScript Bookmarklet 将用友产品开通流程从人工 15 分钟压缩到机器 1 分钟。包含多租户并行开通、联产品权重检查、财务数据批量处理等场景。</p>
+            <div class="project-links">
+              <a href="projects.html" class="proj-link">查看详情 →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-img" style="background: linear-gradient(135deg, oklch(82% 0.06 270), oklch(90% 0.04 300))">
+            <div class="project-icon">📝</div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-meta">
+              <span class="tag tag-mint">Playwright</span>
+              <span class="tag tag-green">Python</span>
+            </div>
+            <h3 class="project-title">福思特会计自动填写</h3>
+            <p class="project-desc">福思特会计模拟系统 · 自动登录 → iframe 导航穿透 → 凭证表单批量填写 · 解决 iframe 嵌套与元素定位失效问题</p>
+            <div class="project-links">
+              <a href="projects.html" class="proj-link">查看详情 →</a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Blog 2-column layout -->
-  <div class="blog-layout" style="padding-top: var(--space-12);">
-
-    <!-- Sidebar (Jekyll Satellite style) -->
-    <aside class="blog-sidebar">
-
-      <div class="sidebar-section">
-        <div class="sidebar-title">Category</div>
-        <a href="#" class="sidebar-link active" data-cat="all">
-          全部文章
-          <span class="sidebar-count">10</span>
-        </a>
-        <a href="#" class="sidebar-link" data-cat="ai">
-          # AI 基础 & Agent
-          <span class="sidebar-count">6</span>
-        </a>
-        <a href="#" class="sidebar-link" data-cat="intern">
-          # 实习日记
-          <span class="sidebar-count">1</span>
-        </a>
-        <a href="#" class="sidebar-link" data-cat="study">
-          # 备考笔记
-          <span class="sidebar-count">1</span>
-        </a>
-        <a href="#" class="sidebar-link" data-cat="finance">
-          # 财务 & 税务
-          <span class="sidebar-count">1</span>
-        </a>
-        <a href="#" class="sidebar-link" data-cat="life">
-          # 生活随笔
-          <span class="sidebar-count">1</span>
-        </a>
+  <!-- ───────────── EXPERIENCE STRIP ───────────── -->
+  <section class="section section-alt" id="experience">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Experience</span>
+        <h2 class="section-title">经历概览</h2>
+        <a href="experience.html" class="section-more">详情 →</a>
       </div>
+      <div class="exp-strip">
 
-      <div class="sidebar-section">
-        <div class="sidebar-title">Tags</div>
-        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
-          <a href="#" class="tag tag-green" style="cursor:pointer;">#Node.js</a>
-          <a href="#" class="tag tag-pink" style="cursor:pointer;">#微信小程序</a>
-          <a href="#" class="tag tag-yellow" style="cursor:pointer;">#考研</a>
-          <a href="#" class="tag tag-mint" style="cursor:pointer;">#Playwright</a>
-          <a href="#" class="tag tag-lavender" style="cursor:pointer;">#LLM</a>
-          <a href="#" class="tag tag-green" style="cursor:pointer;">#实习</a>
-          <a href="#" class="tag tag-pink" style="cursor:pointer;">#IELTS</a>
-          <a href="#" class="tag tag-yellow" style="cursor:pointer;">#税务筹划</a>
+        <div class="exp-item">
+          <div class="exp-dot exp-dot-green"></div>
+          <div class="exp-body">
+            <div class="exp-period">2026.03 — 至今</div>
+            <div class="exp-role">测试实习生</div>
+            <div class="exp-org">用友 UFIDA · 北京</div>
+            <div class="exp-tags">
+              <span class="tag tag-green">在职</span>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="sidebar-section">
-        <div class="sidebar-title">Guides</div>
-        <a href="#" class="sidebar-link">📌 关于本博客</a>
-        <a href="#" class="sidebar-link">📝 Markdown 写作指南</a>
-        <a href="#" class="sidebar-link">🔖 收藏的好文章</a>
-      </div>
+        <div class="exp-divider"></div>
 
-      <div class="sidebar-section">
-        <div class="sidebar-title">Contact</div>
-        <div class="blog-sidebar-social">
-          <a href="https://github.com" target="_blank" class="social-chip">⌥ GitHub</a>
-          <a href="mailto:kaixuanzou1@gmail.com" class="social-chip">✉ Email</a>
-          <a href="#" class="social-chip">💬 WeChat</a>
-          <a href="#" class="social-chip">🔗 LinkedIn</a>
+        <div class="exp-item">
+          <div class="exp-dot exp-dot-pink"></div>
+          <div class="exp-body">
+            <div class="exp-period">2023 — 2027</div>
+            <div class="exp-role">会计学学士</div>
+            <div class="exp-org">北京化工大学 · 昌平校区</div>
+            <div class="exp-tags">
+              <span class="tag tag-pink">在读</span>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="sidebar-section">
-        <div class="visitor-badge">
-          <span style="color:var(--c-green)">●</span>
-          访客计数器：&nbsp;<strong style="color:var(--text-primary)">1,024</strong>
+        <div class="exp-divider"></div>
+
+        <div class="exp-item">
+          <div class="exp-dot exp-dot-yellow"></div>
+          <div class="exp-body">
+            <div class="exp-period">2026.08</div>
+            <div class="exp-role">联合国项目</div>
+            <div class="exp-org">纽约 · 国际交流</div>
+            <div class="exp-tags">
+              <span class="tag tag-yellow">计划中</span>
+            </div>
+          </div>
         </div>
+
       </div>
+    </div>
+  </section>
 
-    </aside>
+  <!-- ───────────── RECENT BLOG ───────────── -->
+  <section class="section" id="blog">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Blog</span>
+        <h2 class="section-title">近期文章</h2>
+        <a href="blog/index.html" class="section-more">全部文章 →</a>
+      </div>
+      <div class="blog-list">
 
-    <!-- Posts main column -->
-    <main>
-      <div class="blog-posts" id="postList">
-
-        <article class="blog-post-card" data-cat="ai">
-          <div class="post-header">
-            <div class="post-meta">
-              <span class="blog-cat-badge badge-green"># AI 基础</span>
-              <span class="post-date">2026-05-19</span>
-            </div>
+        <article class="blog-row">
+          <div class="blog-row-date">2026-05-18</div>
+          <div class="blog-row-content">
+            <span class="blog-cat-badge badge-green"># AI Agent</span>
+            <a href="blog/index.html" class="blog-row-title">Stanford/MIT Meta-Harness：端到端优化大模型 Harness</a>
+            <p class="blog-row-desc">Agent = LLM + Harness。Meta-Harness 通过外层搜索系统自动化优化 Harness 代码，突破纯 Prompt 软约束的局限...</p>
           </div>
-          <a href="#" class="post-title">Stanford/MIT Meta-Harness：端到端优化大模型 Harness 代码</a>
-          <p class="post-excerpt">Agent = LLM + Harness。Meta-Harness 通过外层搜索系统自动化优化 Harness 代码，在 TerminalBench-2 等任务上超越人工设计的最好方案，突破纯 Prompt 软约束的局限。</p>
         </article>
 
-        <article class="blog-post-card" data-cat="ai">
-          <div class="post-header">
-            <div class="post-meta">
-              <span class="blog-cat-badge badge-green"># AI 基础</span>
-              <span class="post-date">2026-05-14</span>
-            </div>
+        <article class="blog-row">
+          <div class="blog-row-date">2026-05-14</div>
+          <div class="blog-row-content">
+            <span class="blog-cat-badge badge-green"># AI 基础</span>
+            <a href="blog/index.html" class="blog-row-title">什么是 AI · Harness Engineering · Agent 全解析</a>
+            <p class="blog-row-desc">从 AI 定义到大模型（LLM）、AIGC 单字接龙、Harness Engineering 四要素、Agent = LLM + Harness 的完整认知框架...</p>
           </div>
-          <a href="#" class="post-title">什么是 AI · Harness Engineering · Agent 全解析</a>
-          <p class="post-excerpt">从 AI 定义到大模型（LLM）、AIGC 单字接龙、Harness Engineering 四要素（Base Model / 评估脚本 / 搜索集 / 初始Harness）、Agent = LLM + Harness 的完整认知框架。</p>
         </article>
 
-        <article class="blog-post-card" data-cat="intern">
-          <div class="post-header">
-            <div class="post-meta">
-              <span class="blog-cat-badge badge-pink"># 实习日记</span>
-              <span class="post-date">2026-05-11</span>
-            </div>
+        <article class="blog-row">
+          <div class="blog-row-date">2026-05-11</div>
+          <div class="blog-row-content">
+            <span class="blog-cat-badge badge-pink"># 实习日记</span>
+            <a href="blog/index.html" class="blog-row-title">用友实习日志：开租户、写 RPA、开发 BIP Skill 的真实记录</a>
+            <p class="blog-row-desc">从 3 月入职到 5 月，记录了用友测试实习日常工作：单元用例、租户开通、JavaScript RPA 书签脚本、质量评价模型...</p>
           </div>
-          <a href="#" class="post-title">用友实习日志（3-5月）：开租户、写 RPA、开发 BIP Skill</a>
-          <p class="post-excerpt">从单元用例到 RPA 脚本到 AI Agent Skill，记录测试实习生日常工作。亮点：JavaScript Bookmarklet 将产品勾选从 15 分钟压缩到 1 分钟；BIP 租户开通 Skill。</p>
         </article>
 
-        <article class="blog-post-card" data-cat="ai">
-          <div class="post-header">
-            <div class="post-meta">
-              <span class="blog-cat-badge badge-green"># AI 思考</span>
-              <span class="post-date">2026-05-08</span>
-            </div>
+        <article class="blog-row">
+          <div class="blog-row-date">2026-05-08</div>
+          <div class="blog-row-content">
+            <span class="blog-cat-badge badge-yellow"># AI 思考</span>
+            <a href="blog/index.html" class="blog-row-title">大模型约束为何失效：长上下文幻觉、权重稀释与工程化 Harness</a>
+            <p class="blog-row-desc">大模型本质是「概率」而非「检索」。约束、Skill、Prompt 本质都是「给概率加权」，不是「给系统上锁」...</p>
           </div>
-          <a href="#" class="post-title">大模型约束为何失效：长上下文幻觉、权重稀释与工程化 Harness</a>
-          <p class="post-excerpt">大模型本质是「概率」而非「检索」。约束、Skill、Prompt 本质都是「给概率加权」，不是「给系统上锁」。Harness Engineering = 代码层面的硬约束 + 动态机制。</p>
-        </article>
-
-        <article class="blog-post-card" data-cat="study">
-          <div class="post-header">
-            <div class="post-meta">
-              <span class="blog-cat-badge badge-yellow"># 备考笔记</span>
-              <span class="post-date">2026-05-02</span>
-            </div>
-          </div>
-          <a href="#" class="post-title">会计专业跨考计算机：我的备考规划与资源整理</a>
-          <p class="post-excerpt">目标清华 CS，从数据结构到操作系统，整理了适合非科班考生的学习路径和推荐教材。实习、上课、备考三线并行的时间管理经验。</p>
-        </article>
-
-        <article class="blog-post-card" data-cat="ai">
-          <div class="post-header">
-            <div class="post-meta">
-              <span class="blog-cat-badge badge-green"># AI Agent</span>
-              <span class="post-date">2026-04-20</span>
-            </div>
-          </div>
-          <a href="#" class="post-title">Playwright 自动化实战：iframe 穿透 + 跨域表单填写</a>
-          <p class="post-excerpt">记录在福思特会计模拟系统项目中解决 iframe 嵌套、元素定位失效问题的完整思路，以及如何调试复杂的 DOM 结构。</p>
-        </article>
-
-        <article class="blog-post-card" data-cat="ai">
-          <div class="post-header">
-            <div class="post-meta">
-              <span class="blog-cat-badge badge-green"># AI Agent</span>
-              <span class="post-date">2026-04-10</span>
-            </div>
-          </div>
-          <a href="#" class="post-title">AI Coding 工具 2023→2026：商业模式的三次跃迁</a>
-          <p class="post-excerpt">从 GitHub Copilot 的 Autocomplete 时代，到 Cursor 的 Chat 模式，再到 Claude Code 的 Agent 模式。梳理这条演进主线背后的商业逻辑与市场格局。</p>
-        </article>
-
-        <article class="blog-post-card" data-cat="finance">
-          <div class="post-header">
-            <div class="post-meta">
-              <span class="blog-cat-badge badge-yellow"># 财务 & 税务</span>
-              <span class="post-date">2026-03-28</span>
-            </div>
-          </div>
-          <a href="#" class="post-title">个人所得税筹划研究：JX 房产剥离案例与高收入薪酬结构</a>
-          <p class="post-excerpt">毕业论文研究方向整理。分析 JX 公司房产剥离案例中的税务处理，以及高收入群体薪酬结构优化的常见路径，结合文献综述展开。</p>
-        </article>
-
-        <article class="blog-post-card" data-cat="ai">
-          <div class="post-header">
-            <div class="post-meta">
-              <span class="blog-cat-badge badge-green"># AI 基础</span>
-              <span class="post-date">2026-02-18</span>
-            </div>
-          </div>
-          <a href="#" class="post-title">灵眸 LLM API 接入实战：IELTS Prep Space 口语评分模块</a>
-          <p class="post-excerpt">如何设计一个「模拟雅思考官」的 Prompt，让 LLM 给出结构化的口语评分反馈（发音/词汇/流利度/连贯性），以及如何处理长音频输入。</p>
-        </article>
-
-        <article class="blog-post-card" data-cat="life">
-          <div class="post-header">
-            <div class="post-meta">
-              <span class="blog-cat-badge" style="background:var(--c-lavender-soft);color:oklch(28% 0.08 285);"># 生活随笔</span>
-              <span class="post-date">2026-01-30</span>
-            </div>
-          </div>
-          <a href="#" class="post-title">2026 年目标复盘：21 岁，想在 35 岁退休</a>
-          <p class="post-excerpt">写在学年初。梳理了我的三条主线：大厂实习积累、清华备考、35 岁 FIRE。不是遥不可及的梦，是每天都要复利的计划。</p>
         </article>
 
       </div>
-    </main>
-  </div>
+    </div>
+  </section>
+
+  <!-- ───────────── CONTACT ───────────── -->
+  <section class="section section-contact" id="contact">
+    <div class="section-inner contact-inner">
+      <h2 class="contact-title">Let's connect.</h2>
+      <p class="contact-sub">欢迎聊项目合作、实习机会或者任何有趣的想法</p>
+      <div class="contact-links">
+        <a href="mailto:kaixuanzou1@gmail.com" class="contact-btn">
+          <span>✉</span> Email
+        </a>
+        <a href="https://github.com" target="_blank" class="contact-btn">
+          <span>⌥</span> GitHub
+        </a>
+        <a href="#" class="contact-btn">
+          <span>💬</span> WeChat
+        </a>
+        <a href="#" class="contact-btn">
+          <span>🔗</span> LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -308,24 +339,6 @@
     </div>
   </footer>
 
-  <script src="../assets/main.js"></script>
-  <script>
-    // Category filter
-    document.querySelectorAll('.sidebar-link[data-cat]').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelectorAll('.sidebar-link[data-cat]').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        const cat = link.dataset.cat;
-        document.querySelectorAll('.blog-post-card').forEach(card => {
-          if (cat === 'all' || card.dataset.cat === cat) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
+  <script src="assets/main.js"></script>
 </body>
 </html>
