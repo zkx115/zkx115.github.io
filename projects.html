@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects · 邹凯璇</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">KX<span class="logo-dot">.</span></a>
+      <nav class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
+        <span class="toggle-icon">◑</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-hero-label">Projects</div>
+    <h1 class="page-hero-title">我做过的东西</h1>
+    <p class="page-hero-desc">从 AI Agent 到全栈 Web App，这里记录了我在学习和探索中构建的项目。</p>
+  </div>
+
+  <section style="max-width:1100px; margin:0 auto; padding: 0 1.5rem var(--space-24);">
+
+    <div class="projects-filters">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="ai">AI / Agent</button>
+      <button class="filter-btn" data-filter="web">Web App</button>
+      <button class="filter-btn" data-filter="wechat">微信小程序</button>
+      <button class="filter-btn" data-filter="automation">自动化 / RPA</button>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- 1 -->
+      <article class="project-card project-featured" data-tags="ai wechat">
+        <div class="project-card-img" style="background: linear-gradient(135deg, oklch(78% 0.09 155), oklch(88% 0.06 200))">
+          <div class="project-icon">🚆</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="tag tag-green">微信小程序</span>
+            <span class="tag tag-yellow">AI Agent</span>
+            <span class="tag tag-mint">Node.js</span>
+          </div>
+          <h3 class="project-title">12306 订票 Agent</h3>
+          <p class="project-desc">用自然语言告诉 Agent「我要从北京去上海，周五出发坐高铁」，它会自动搜票、选座、发起抢票流程。基于微信小程序 + Node.js/Express 后端，集成 LLM 意图识别。</p>
+          <ul class="project-desc" style="margin-top: 0.5rem; padding-left: 1.2em;">
+            <li>自然语言意图解析（目的地 / 时间 / 座位类型）</li>
+            <li>12306 API 集成，实时余票查询</li>
+            <li>抢票定时任务队列（BullMQ）</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" class="proj-link">GitHub →</a>
+            <a href="#" class="proj-link">Demo →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="project-card" data-tags="web ai">
+        <div class="project-card-img" style="background: linear-gradient(135deg, oklch(85% 0.06 340), oklch(92% 0.04 20))">
+          <div class="project-icon">📚</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="tag tag-pink">Next.js</span>
+            <span class="tag tag-mint">Prisma</span>
+          </div>
+          <h3 class="project-title">考研备考网站</h3>
+          <p class="project-desc">四科（数/计/政/英）一体化学习平台，支持网课嵌入、刷题笔记、进度追踪。目标备考清华 CS 研究生。</p>
+          <div class="project-links">
+            <a href="#" class="proj-link">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="project-card" data-tags="web ai">
+        <div class="project-card-img" style="background: linear-gradient(135deg, oklch(88% 0.07 90), oklch(94% 0.05 60))">
+          <div class="project-icon">🎯</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="tag tag-yellow">Express</span>
+            <span class="tag tag-lavender">Prisma</span>
+            <span class="tag tag-pink">Next.js</span>
+          </div>
+          <h3 class="project-title">IELTS Prep Space</h3>
+          <p class="project-desc">AI 驱动的雅思备考平台：口语模拟打分、作文批改、个性化学习计划。接入灵眸 LLM API，Express + Prisma 后端。</p>
+          <div class="project-links">
+            <a href="#" class="proj-link">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="project-card" data-tags="automation">
+        <div class="project-card-img" style="background: linear-gradient(135deg, oklch(82% 0.06 270), oklch(90% 0.04 300))">
+          <div class="project-icon">🤖</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="tag tag-lavender">Playwright</span>
+            <span class="tag tag-mint">Python</span>
+          </div>
+          <h3 class="project-title">福思特会计模拟系统自动填写</h3>
+          <p class="project-desc">针对福思特会计模拟系统的 Playwright 自动化脚本：自动登录 → 跨 iframe 导航 → 抓取参考答案 → 批量填写凭证表单 → 保存提交。解决 iframe 嵌套穿透与元素定位失效问题。</p>
+          <div class="project-links">
+            <a href="#" class="proj-link">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="project-card" data-tags="automation ai">
+        <div class="project-card-img" style="background: linear-gradient(135deg, oklch(88% 0.08 40), oklch(94% 0.05 60))">
+          <div class="project-icon">⚡</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="tag tag-yellow">RPA</span>
+            <span class="tag tag-green">用友 BIP</span>
+            <span class="tag tag-pink">JavaScript</span>
+          </div>
+          <h3 class="project-title">用友日常工作 RPA Bookmarklet</h3>
+          <p class="project-desc">用 JavaScript Bookmarklet 将用友产品开通流程从人工 15 分钟压缩到 1 分钟。包含多租户并行勾选、联产品权重检查、联产品权重导出导入验证等场景。</p>
+          <ul class="project-desc" style="margin-top: 0.5rem; padding-left: 1.2em;">
+            <li>全产品 checkbox 一键勾选（支持产品分类+用户数）</li>
+            <li>联产品权重导出导入自动化验证</li>
+            <li>质量评价模型（多租户指标数据看板）</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" class="proj-link">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="project-card" data-tags="ai web">
+        <div class="project-card-img" style="background: linear-gradient(135deg, oklch(88% 0.07 280), oklch(90% 0.05 310))">
+          <div class="project-icon">🛠️</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="tag tag-green">WorkBuddy Skill</span>
+            <span class="tag tag-mint">AI Agent</span>
+            <span class="tag tag-lavender">Node.js</span>
+          </div>
+          <h3 class="project-title">BIP 租户开通 Agent</h3>
+          <p class="project-desc">用 WorkBuddy Skill 全流程自动化用友 BIP 租户开通：商务系统下单 → 用友集团提单审批 → 租户激活授权。原来需要手动点击 184 次，Skill 化后大幅提效。</p>
+          <div class="project-links">
+            <a href="#" class="proj-link">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="project-card" data-tags="ai">
+        <div class="project-card-img" style="background: linear-gradient(135deg, oklch(87% 0.06 25), oklch(93% 0.04 50))">
+          <div class="project-icon">📝</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="tag tag-yellow">研究</span>
+            <span class="tag tag-pink">报告</span>
+          </div>
+          <h3 class="project-title">AI Coding 商业模式演变研究</h3>
+          <p class="project-desc">系统梳理 2023 至今 AI 编程工具赛道的商业逻辑演变：从 Copilot 模式到 Agent 模式，市场格局与盈利路径分析。</p>
+          <div class="project-links">
+            <a href="blog/index.html" class="proj-link">阅读分析 →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 邹凯璇 · Kaixuan Zou</span>
+      <span class="footer-motto">35 岁 FIRE · 每一天都在复利</span>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

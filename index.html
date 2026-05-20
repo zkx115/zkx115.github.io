@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog · 邹凯璇</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    .blog-hero-strip {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      padding: calc(60px + var(--space-12)) var(--space-6) var(--space-8);
+    }
+    .blog-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+    }
+    .blog-breadcrumb {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      margin-bottom: var(--space-3);
+    }
+    .blog-breadcrumb a { color: var(--text-muted); }
+    .blog-breadcrumb a:hover { color: var(--text-primary); }
+    .blog-stats {
+      display: flex;
+      gap: var(--space-6);
+    }
+    .blog-stat {
+      text-align: center;
+    }
+    .blog-stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+    .blog-stat-label {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      margin-top: var(--space-1);
+    }
+    .visitor-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--r-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">KX<span class="logo-dot">.</span></a>
+      <nav class="nav-links">
+        <a href="../projects.html">Projects</a>
+        <a href="../experience.html">Experience</a>
+        <a href="index.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
+        <span class="toggle-icon">◑</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Blog hero strip -->
+  <div class="blog-hero-strip">
+    <div class="blog-hero-inner">
+      <div>
+        <div class="blog-breadcrumb">
+          <a href="../index.html">Home</a> &nbsp;›&nbsp; Blog
+        </div>
+        <h1 style="font-family:var(--font-display); font-size: clamp(2rem,5vw,3.2rem); font-weight:700; letter-spacing:-0.03em; color:var(--text-primary);">All Posts</h1>
+        <p style="font-size:0.9rem; color:var(--text-secondary); margin-top:var(--space-2);">记录技术、备考、实习与思考的地方</p>
+      </div>
+      <div class="blog-stats">
+        <div class="blog-stat">
+          <div class="blog-stat-num">10</div>
+          <div class="blog-stat-label">篇文章</div>
+        </div>
+        <div class="blog-stat">
+          <div class="blog-stat-num">5</div>
+          <div class="blog-stat-label">个分类</div>
+        </div>
+        <div class="blog-stat">
+          <div class="blog-stat-num">2026</div>
+          <div class="blog-stat-label">活跃年份</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog 2-column layout -->
+  <div class="blog-layout" style="padding-top: var(--space-12);">
+
+    <!-- Sidebar (Jekyll Satellite style) -->
+    <aside class="blog-sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Category</div>
+        <a href="#" class="sidebar-link active" data-cat="all">
+          全部文章
+          <span class="sidebar-count">10</span>
+        </a>
+        <a href="#" class="sidebar-link" data-cat="ai">
+          # AI 基础 & Agent
+          <span class="sidebar-count">6</span>
+        </a>
+        <a href="#" class="sidebar-link" data-cat="intern">
+          # 实习日记
+          <span class="sidebar-count">1</span>
+        </a>
+        <a href="#" class="sidebar-link" data-cat="study">
+          # 备考笔记
+          <span class="sidebar-count">1</span>
+        </a>
+        <a href="#" class="sidebar-link" data-cat="finance">
+          # 财务 & 税务
+          <span class="sidebar-count">1</span>
+        </a>
+        <a href="#" class="sidebar-link" data-cat="life">
+          # 生活随笔
+          <span class="sidebar-count">1</span>
+        </a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Tags</div>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
+          <a href="#" class="tag tag-green" style="cursor:pointer;">#Node.js</a>
+          <a href="#" class="tag tag-pink" style="cursor:pointer;">#微信小程序</a>
+          <a href="#" class="tag tag-yellow" style="cursor:pointer;">#考研</a>
+          <a href="#" class="tag tag-mint" style="cursor:pointer;">#Playwright</a>
+          <a href="#" class="tag tag-lavender" style="cursor:pointer;">#LLM</a>
+          <a href="#" class="tag tag-green" style="cursor:pointer;">#实习</a>
+          <a href="#" class="tag tag-pink" style="cursor:pointer;">#IELTS</a>
+          <a href="#" class="tag tag-yellow" style="cursor:pointer;">#税务筹划</a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Guides</div>
+        <a href="#" class="sidebar-link">📌 关于本博客</a>
+        <a href="#" class="sidebar-link">📝 Markdown 写作指南</a>
+        <a href="#" class="sidebar-link">🔖 收藏的好文章</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Contact</div>
+        <div class="blog-sidebar-social">
+          <a href="https://github.com" target="_blank" class="social-chip">⌥ GitHub</a>
+          <a href="mailto:kaixuanzou1@gmail.com" class="social-chip">✉ Email</a>
+          <a href="#" class="social-chip">💬 WeChat</a>
+          <a href="#" class="social-chip">🔗 LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="visitor-badge">
+          <span style="color:var(--c-green)">●</span>
+          访客计数器：&nbsp;<strong style="color:var(--text-primary)">1,024</strong>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Posts main column -->
+    <main>
+      <div class="blog-posts" id="postList">
+
+        <article class="blog-post-card" data-cat="ai">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="blog-cat-badge badge-green"># AI 基础</span>
+              <span class="post-date">2026-05-19</span>
+            </div>
+          </div>
+          <a href="#" class="post-title">Stanford/MIT Meta-Harness：端到端优化大模型 Harness 代码</a>
+          <p class="post-excerpt">Agent = LLM + Harness。Meta-Harness 通过外层搜索系统自动化优化 Harness 代码，在 TerminalBench-2 等任务上超越人工设计的最好方案，突破纯 Prompt 软约束的局限。</p>
+        </article>
+
+        <article class="blog-post-card" data-cat="ai">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="blog-cat-badge badge-green"># AI 基础</span>
+              <span class="post-date">2026-05-14</span>
+            </div>
+          </div>
+          <a href="#" class="post-title">什么是 AI · Harness Engineering · Agent 全解析</a>
+          <p class="post-excerpt">从 AI 定义到大模型（LLM）、AIGC 单字接龙、Harness Engineering 四要素（Base Model / 评估脚本 / 搜索集 / 初始Harness）、Agent = LLM + Harness 的完整认知框架。</p>
+        </article>
+
+        <article class="blog-post-card" data-cat="intern">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="blog-cat-badge badge-pink"># 实习日记</span>
+              <span class="post-date">2026-05-11</span>
+            </div>
+          </div>
+          <a href="#" class="post-title">用友实习日志（3-5月）：开租户、写 RPA、开发 BIP Skill</a>
+          <p class="post-excerpt">从单元用例到 RPA 脚本到 AI Agent Skill，记录测试实习生日常工作。亮点：JavaScript Bookmarklet 将产品勾选从 15 分钟压缩到 1 分钟；BIP 租户开通 Skill。</p>
+        </article>
+
+        <article class="blog-post-card" data-cat="ai">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="blog-cat-badge badge-green"># AI 思考</span>
+              <span class="post-date">2026-05-08</span>
+            </div>
+          </div>
+          <a href="#" class="post-title">大模型约束为何失效：长上下文幻觉、权重稀释与工程化 Harness</a>
+          <p class="post-excerpt">大模型本质是「概率」而非「检索」。约束、Skill、Prompt 本质都是「给概率加权」，不是「给系统上锁」。Harness Engineering = 代码层面的硬约束 + 动态机制。</p>
+        </article>
+
+        <article class="blog-post-card" data-cat="study">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="blog-cat-badge badge-yellow"># 备考笔记</span>
+              <span class="post-date">2026-05-02</span>
+            </div>
+          </div>
+          <a href="#" class="post-title">会计专业跨考计算机：我的备考规划与资源整理</a>
+          <p class="post-excerpt">目标清华 CS，从数据结构到操作系统，整理了适合非科班考生的学习路径和推荐教材。实习、上课、备考三线并行的时间管理经验。</p>
+        </article>
+
+        <article class="blog-post-card" data-cat="ai">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="blog-cat-badge badge-green"># AI Agent</span>
+              <span class="post-date">2026-04-20</span>
+            </div>
+          </div>
+          <a href="#" class="post-title">Playwright 自动化实战：iframe 穿透 + 跨域表单填写</a>
+          <p class="post-excerpt">记录在福思特会计模拟系统项目中解决 iframe 嵌套、元素定位失效问题的完整思路，以及如何调试复杂的 DOM 结构。</p>
+        </article>
+
+        <article class="blog-post-card" data-cat="ai">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="blog-cat-badge badge-green"># AI Agent</span>
+              <span class="post-date">2026-04-10</span>
+            </div>
+          </div>
+          <a href="#" class="post-title">AI Coding 工具 2023→2026：商业模式的三次跃迁</a>
+          <p class="post-excerpt">从 GitHub Copilot 的 Autocomplete 时代，到 Cursor 的 Chat 模式，再到 Claude Code 的 Agent 模式。梳理这条演进主线背后的商业逻辑与市场格局。</p>
+        </article>
+
+        <article class="blog-post-card" data-cat="finance">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="blog-cat-badge badge-yellow"># 财务 & 税务</span>
+              <span class="post-date">2026-03-28</span>
+            </div>
+          </div>
+          <a href="#" class="post-title">个人所得税筹划研究：JX 房产剥离案例与高收入薪酬结构</a>
+          <p class="post-excerpt">毕业论文研究方向整理。分析 JX 公司房产剥离案例中的税务处理，以及高收入群体薪酬结构优化的常见路径，结合文献综述展开。</p>
+        </article>
+
+        <article class="blog-post-card" data-cat="ai">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="blog-cat-badge badge-green"># AI 基础</span>
+              <span class="post-date">2026-02-18</span>
+            </div>
+          </div>
+          <a href="#" class="post-title">灵眸 LLM API 接入实战：IELTS Prep Space 口语评分模块</a>
+          <p class="post-excerpt">如何设计一个「模拟雅思考官」的 Prompt，让 LLM 给出结构化的口语评分反馈（发音/词汇/流利度/连贯性），以及如何处理长音频输入。</p>
+        </article>
+
+        <article class="blog-post-card" data-cat="life">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="blog-cat-badge" style="background:var(--c-lavender-soft);color:oklch(28% 0.08 285);"># 生活随笔</span>
+              <span class="post-date">2026-01-30</span>
+            </div>
+          </div>
+          <a href="#" class="post-title">2026 年目标复盘：21 岁，想在 35 岁退休</a>
+          <p class="post-excerpt">写在学年初。梳理了我的三条主线：大厂实习积累、清华备考、35 岁 FIRE。不是遥不可及的梦，是每天都要复利的计划。</p>
+        </article>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 邹凯璇 · Kaixuan Zou</span>
+      <span class="footer-motto">35 岁 FIRE · 每一天都在复利</span>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+  <script>
+    // Category filter
+    document.querySelectorAll('.sidebar-link[data-cat]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelectorAll('.sidebar-link[data-cat]').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        const cat = link.dataset.cat;
+        document.querySelectorAll('.blog-post-card').forEach(card => {
+          if (cat === 'all' || card.dataset.cat === cat) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience · 邹凯璇</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .exp-section-title {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-6);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .exp-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .exp-page-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 var(--space-6) var(--space-24);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12) var(--space-16);
+    }
+    @media (max-width: 768px) {
+      .exp-page-inner { grid-template-columns: 1fr; }
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-sm);
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      color: var(--text-secondary);
+      background: var(--surface);
+      transition: all var(--duration-fast) var(--ease-out-quart);
+    }
+    .skill-pill:hover {
+      border-color: var(--c-green);
+      color: var(--text-primary);
+      background: var(--c-green-soft);
+    }
+    .goal-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: var(--space-6);
+      margin-bottom: var(--space-4);
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+      transition: all var(--duration-base) var(--ease-out-quart);
+    }
+    .goal-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-strong);
+    }
+    .goal-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: var(--r-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .goal-body {}
+    .goal-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--space-1);
+    }
+    .goal-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .progress-bar {
+      margin-top: var(--space-3);
+      height: 4px;
+      border-radius: 100px;
+      background: var(--border);
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 1.2s var(--ease-out-quart);
+    }
+    .progress-label {
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      margin-top: var(--space-1);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">KX<span class="logo-dot">.</span></a>
+      <nav class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
+        <span class="toggle-icon">◑</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-hero-label">Experience</div>
+    <h1 class="page-hero-title">经历 & 技能</h1>
+    <p class="page-hero-desc">实习、校园、目标——这些是塑造我的经历，也是我正在努力的方向。</p>
+  </div>
+
+  <div class="exp-page-inner">
+
+    <!-- 左列：时间线 -->
+    <div>
+      <div class="exp-section-title">Work & Internship</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: var(--c-green-soft)">💼</div>
+          <div class="timeline-body">
+            <div class="timeline-period">2026.03 — 至今</div>
+            <div class="timeline-title">测试实习生</div>
+            <div class="timeline-org">用友 UFIDA · 北京</div>
+            <p class="timeline-desc">企业级 BIP 软件测试：编写功能/回归测试用例，Bug 追踪与开发联调。开发 RPA 脚本将重复操作从 15 分钟压缩至 1 分钟，搭建质量评价模型，开发 BIP 租户开通 Agent（WorkBuddy Skill）。</p>
+            <div class="timeline-tags">
+              <span class="tag tag-green">在职</span>
+              <span class="tag tag-mint">测试工程师</span>
+              <span class="tag tag-yellow">RPA / AI Agent</span>
+              <span class="tag tag-lavender">企业软件</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: var(--c-yellow-soft)">📊</div>
+          <div class="timeline-body">
+            <div class="timeline-period">2025.07 — 2025.08</div>
+            <div class="timeline-title">财务会计岗实习生</div>
+            <div class="timeline-org">天津市意翔文德会计服务有限公司</div>
+            <p class="timeline-desc">财务会计岗实习。完成税费申报、银企付款复核、凭证审核、报表出具等全流程财务处理。</p>
+            <div class="timeline-tags">
+              <span class="tag tag-yellow">实习</span>
+              <span class="tag tag-mint">财务</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: var(--c-pink-soft)">🧠</div>
+          <div class="timeline-body">
+            <div class="timeline-period">2025.03 — 2025.06</div>
+            <div class="timeline-title">心理咨询师助理</div>
+            <div class="timeline-org">北京化工大学 心理中心</div>
+            <p class="timeline-desc">协助填表、安抚同学情绪、对接心理咨询师与同学。参与《大中小学心理健康一体化》课题跟组，协助整理 utd24/FT50 期刊相关文献。</p>
+            <div class="timeline-tags">
+              <span class="tag tag-pink">校园</span>
+              <span class="tag tag-lavender">心理咨询</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: var(--c-mint-soft)">🍹</div>
+          <div class="timeline-body">
+            <div class="timeline-period">2024.03 — 2024.05</div>
+            <div class="timeline-title">店员</div>
+            <div class="timeline-org">北京化工大学 1958 青春版</div>
+            <p class="timeline-desc">校园咖啡店店员，做饮料、点货结账、摆面包陈列、举办抽奖活动等。</p>
+            <div class="timeline-tags">
+              <span class="tag tag-mint">校园</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="exp-section-title" style="margin-top: var(--space-10)">Education</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: var(--c-pink-soft)">🎓</div>
+          <div class="timeline-body">
+            <div class="timeline-period">2023 — 2027（预计）</div>
+            <div class="timeline-title">会计学 学士</div>
+            <div class="timeline-org">北京化工大学 · 昌平校区 · 学号 2023060222</div>
+            <p class="timeline-desc">主修会计、财务管理、审计。自学全栈开发，利用专业知识开发财务相关自动化工具。线下课程集中在工作日安排，实习与学业并行推进。</p>
+            <div class="timeline-tags">
+              <span class="tag tag-pink">在读大三</span>
+              <span class="tag tag-lavender">会计专业</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: var(--c-yellow-soft)">🏕️</div>
+          <div class="timeline-body">
+            <div class="timeline-period">2024.07 — 2024.08</div>
+            <div class="timeline-title">"千万工程"社会实践 项目负责人</div>
+            <div class="timeline-org">中国青年创业就业基金会 · 浙江</div>
+            <p class="timeline-desc">全程带队开展乡村调研，设计数据收集问卷，回收有效样本 500+ 份，使用 Excel 和 SPSS 进行数据分析，撰写实践报告获"优秀实践团队"。</p>
+            <div class="timeline-tags">
+              <span class="tag tag-yellow">社会实践</span>
+              <span class="tag tag-green">项目负责人</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: var(--c-pink-soft)">🎭</div>
+          <div class="timeline-body">
+            <div class="timeline-period">2025.02 — 2025.07</div>
+            <div class="timeline-title">心理协会 活动部部长</div>
+            <div class="timeline-org">北京化工大学</div>
+            <p class="timeline-desc">组织策划 10+ 场校园活动，创新举办"心理贴画"、"心灵集市"等品牌活动，"浪漫新引力"报名人数同比增加 200+，参与人数提升 110%。</p>
+            <div class="timeline-tags">
+              <span class="tag tag-pink">社团</span>
+              <span class="tag tag-green">部长</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: var(--c-yellow-soft)">🗽</div>
+          <div class="timeline-body">
+            <div class="timeline-period">2026.08.08 — 08.19（计划）</div>
+            <div class="timeline-title">联合国青年项目</div>
+            <div class="timeline-org">纽约 · 国际交流</div>
+            <p class="timeline-desc">参加纽约联合国项目，主要目的为获取美签及实地感受国际环境，评估留学意向。预算约 5 万元。</p>
+            <div class="timeline-tags">
+              <span class="tag tag-yellow">计划中</span>
+              <span class="tag tag-mint">国际交流</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: var(--c-mint-soft)">🎯</div>
+          <div class="timeline-body">
+            <div class="timeline-period">目标 2028</div>
+            <div class="timeline-title">计算机硕士</div>
+            <div class="timeline-org">清华大学（目标院校）</div>
+            <p class="timeline-desc">会计专业跨考计算机，已参加 2 次数学建模国赛、亚太杯、美赛，正在备考数据结构、操作系统、计算机网络、算法。</p>
+            <div class="timeline-tags">
+              <span class="tag tag-mint">备考中</span>
+              <span class="tag tag-green">跨考</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 右列：技能 + 目标 -->
+    <div>
+      <div class="exp-section-title">Tech Skills</div>
+
+      <div style="margin-bottom: var(--space-8);">
+        <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:var(--space-4); font-family:var(--font-mono);">Frontend</p>
+        <div class="skills-grid">
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">Next.js</span>
+          <span class="skill-pill">TypeScript</span>
+          <span class="skill-pill">HTML/CSS</span>
+          <span class="skill-pill">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom: var(--space-8);">
+        <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:var(--space-4); font-family:var(--font-mono);">Backend</p>
+        <div class="skills-grid">
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">Express</span>
+          <span class="skill-pill">Prisma</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">REST API</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom: var(--space-8);">
+        <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:var(--space-4); font-family:var(--font-mono);">Tools & Other</p>
+        <div class="skills-grid">
+          <span class="skill-pill">Git / GitHub</span>
+          <span class="skill-pill">Playwright</span>
+          <span class="skill-pill">微信小程序</span>
+          <span class="skill-pill">LLM API</span>
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">SQL</span>
+        </div>
+      </div>
+
+      <div class="exp-section-title" style="margin-top: var(--space-10)">Competitions & Awards</div>
+
+      <div class="skills-grid" style="margin-bottom: var(--space-8);">
+        <span class="skill-pill" style="border-color:var(--c-green);color:var(--c-green);">🏆 华数杯一等奖（国家级）</span>
+        <span class="skill-pill">数学建模国赛 × 2</span>
+        <span class="skill-pill">亚太杯三等奖</span>
+        <span class="skill-pill">校数学建模二等奖</span>
+        <span class="skill-pill">美赛 S 奖</span>
+        <span class="skill-pill">外研社铜奖</span>
+        <span class="skill-pill">计算机能力挑战赛省三</span>
+        <span class="skill-pill">互联网+ 校二等奖</span>
+        <span class="skill-pill">三创赛校二等奖</span>
+      </div>
+
+      <div class="exp-section-title" style="margin-top: var(--space-10)">Certificates</div>
+
+      <div class="skills-grid" style="margin-bottom: var(--space-8);">
+        <span class="skill-pill" style="border-color:var(--c-pink);color:var(--c-pink);">📜 普通话二甲</span>
+        <span class="skill-pill">计算机二级（Office）</span>
+        <span class="skill-pill">初级会计</span>
+        <span class="skill-pill">CET-6</span>
+        <span class="skill-pill">雅思 6.5（阅读 6.5）</span>
+        <span class="skill-pill">心理咨询师证书</span>
+      </div>
+
+      <div class="exp-section-title" style="margin-top: var(--space-10)">Long-term Goals</div>
+
+      <div class="goal-card">
+        <div class="goal-icon" style="background: var(--c-green-soft)">🔥</div>
+        <div class="goal-body">
+          <div class="goal-title">35 岁 FIRE 提前退休</div>
+          <div class="goal-desc">通过复利投资 + 副业创收，在 35 岁实现财务自由。当前方向：跨境电商、内容变现、AI 工具 SaaS。</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:12%; background: var(--c-green);"></div>
+          </div>
+          <div class="progress-label">规划阶段 · 12%</div>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="goal-icon" style="background: var(--c-pink-soft)">🏫</div>
+        <div class="goal-body">
+          <div class="goal-title">清华 CS 研究生</div>
+          <div class="goal-desc">会计跨考计算机，目标清华大学。正在系统学习数据结构、算法、操作系统、计算机网络。</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:28%; background: var(--c-pink);"></div>
+          </div>
+          <div class="progress-label">备考中 · 28%</div>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="goal-icon" style="background: var(--c-yellow-soft)">💼</div>
+        <div class="goal-body">
+          <div class="goal-title">大厂 AI 方向实习</div>
+          <div class="goal-desc">目标投递 AI/LLM 开发、AI 数据分析、后端开发等岗位，持续用项目积累竞争力。</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:40%; background: var(--c-yellow);"></div>
+          </div>
+          <div class="progress-label">准备中 · 40%</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 邹凯璇 · Kaixuan Zou</span>
+      <span class="footer-motto">35 岁 FIRE · 每一天都在复利</span>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
